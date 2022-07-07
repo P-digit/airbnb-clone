@@ -1,5 +1,6 @@
 from django.views.generic import ListView, DetailView
 from django.shortcuts import render
+from django_countries import Countries
 from . import models
 
 # Create your views here.
@@ -24,6 +25,21 @@ class RoomDetail(DetailView):
 
 
 def search(request):
-    city = request.GET.get("city")
+    city = request.GET.get("city", "Anywhere")
     city = str.capitalize(city)
-    return render(request, "rooms/search.html", {"city": city})
+    country = request.GET.get("country", "KR")
+    room_type = request.GET.get("room_type", "0")
+
+    room_types = models.RoomType.objects.all()
+
+    return render(
+        request,
+        "rooms/search.html",
+        {
+            "city": city,
+            "countries": Countries,
+            "room_types": room_types,
+            "country": country,
+            "room_type": room_type,
+        },
+    )
