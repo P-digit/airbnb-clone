@@ -109,3 +109,6 @@ def search(request):
         "rooms/search.html",
         {**form, **choices, "rooms": rooms},
     )
+
+
+DF = ""
