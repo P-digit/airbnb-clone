@@ -36,7 +36,7 @@ class RoomAdmin(admin.ModelAdmin):
         (
             "Times",
             {
-                "fields": ("check_in", "check_out"),
+                "fields": ("check_in", "check_out", "instant_book"),
             },
         ),
         (

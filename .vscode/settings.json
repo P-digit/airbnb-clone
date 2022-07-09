@@ -17,5 +17,13 @@
     "editor.defaultFormatter": "ms-python.python"
   },
   "python.linting.flake8Enabled": true,
-  "python.linting.flake8Args": ["--max-line-length=88"]
+  "python.linting.flake8Args": ["--max-line-length=88"],
+
+  "beautify.language": {
+    "html": ["django-html"]
+  },
+  "[django-html]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "HookyQR.beautify"
+  }
 }
